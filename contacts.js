@@ -24,11 +24,14 @@ function listContacts() {
 async function getContactById(contactId) {
   try {
     const contacts = await readcontacts();
-    contacts.filter(({ id }) => id.toString() === contactId);
+    return contacts.filter(({ id }) => id.toString() === contactId);
+    // console.log()
+    // return update;
   } catch (error) {
     console.log("error");
   }
 }
+
 
 async function removeContact(contactId) {
   const contacts = await readcontacts();
